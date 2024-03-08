@@ -96,7 +96,7 @@ const SkillItem = styled.div`
     gap: 8px;
     justify-content: center;
     font-size: 16px;
-    color: ${({ theme }) => theme.text_primary+80};
+    color: ${({ theme }) => theme.text_primary + 80};
     border-radius: 12px;
     border: 1px solid ${({ theme }) => theme.text_primary + 80};
     padding: 12px 16px;
@@ -140,7 +140,7 @@ const Skills = () => {
                             ))}
                         </SkillList>
                     </Skill>
-                    ))};
+                    ))}
                 </SkillsContainer>
             </Wrapper>
         </Container>
