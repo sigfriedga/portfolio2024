@@ -40,7 +40,9 @@ function App() {
         <Wrapper>
           <Skills />
           <Experience />
-          <Education />
+        </Wrapper>
+        <Wrapper>
+        <Education />
         </Wrapper>
       </Body>
       </Router>
