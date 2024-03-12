@@ -34,7 +34,7 @@ const NavLink = styled.a`
    }
 `;
 
-const GithubButton = styled.button`
+const GithubButton = styled.a`
    background-color: transparent;
    color: ${({ theme }) => theme.primary};
    border: 1.8px solid ${({ theme }) => theme.primary};
@@ -164,18 +164,15 @@ const Navbar = () => {
     return (
         <Nav>
             <NavContainer>
-                <NavLogo to="/">
-                    <a 
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        color: "white",
-                         marginbottom: "20",
-                        cursor: "pointer",
+                <NavLogo to="/" style={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "white",
+                    marginBottom: "20px",
+                    cursor: "pointer",
                     }}>
-                        <LuFileSpreadsheet size="3rem" /> 
-                        <Span>Porfolio</Span>
-                    </a>
+                        <LuFileSpreadsheet size="3rem" />
+                        <Span>Portfolio</Span>
                 </NavLogo>
                 <MobileIcon>
                     <FaBars 
@@ -238,7 +235,7 @@ const Navbar = () => {
                             }}
                             href={Bio.github}
                             target="_blank">
-                            Githyb Profile
+                            Github Profile
                         </GithubButton>
                     </MobileMenu>
                 )

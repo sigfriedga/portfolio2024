@@ -78,10 +78,10 @@ const Experience = () => {
                 <TimeLineSection>
                     <Timeline>
                         {experiences.map(( experience, index ) => (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="warning" />
-                                    { index !== experiences.length -1 && <TimelineConnector style={{ background: "white"}}/>}
+                                    {index !== experiences.length -1 && <TimelineConnector style={{ background: "white"}}/>}
                                 </TimelineSeparator>
                                 <TimelineContent sx={{py: "12px", px: 2}}>
                                     <ExperienceCard experience={experience} />
@@ -89,7 +89,6 @@ const Experience = () => {
                             </TimelineItem>
                         ))}
                     </Timeline>
-
                 </TimeLineSection>
             </Wrapper>
         </Container>

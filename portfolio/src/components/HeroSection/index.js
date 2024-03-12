@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
-import Tyewriter  from "typewriter-effect";
+import Typewriter  from "typewriter-effect";
 import HeroImg from "../../img/sga.jpg";
 import HeroBgAnimation from "../../HeroBgAnimation";
 
@@ -172,12 +172,12 @@ export const ResumeButton = styled.a`
     font-weight: 600;
     transition: all 0.2s ease-in-out !important;
     background: rgb(2,0,36);
-background: linear-gradient(225deg, rgba(2,0,36,1) 0%, rgba(115,253,168,1) 75%, rgba(115,253,168,1) 100%, rgba(0,212,255,1) 100%);
-    &:hover {
+    background: linear-gradient(225deg, rgba(2,0,36,1) 0%, rgba(115,253,168,1) 75%, rgba(115,253,168,1) 100%, rgba(0,212,255,1) 100%);
+     &:hover {
         transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634;
-    filter: brightness(1);
+        transition: all 0.4s ease-in-out;
+        box-shadow:  20px 20px 60px #1F2634;
+        filter: brightness(1);
     }    
     
     @media (max-width: 640px) {
@@ -206,7 +206,6 @@ const Image = styled.img`
         max-width: 280px;
         max-height: 280px;
     } 
-
 `;
 
 const Hero = () => {
@@ -225,7 +224,7 @@ const Hero = () => {
                     <TextLoop>
                         I am a
                         <Span>
-                            <Tyewriter 
+                            <Typewriter 
                                 options={{
                                     strings: Bio.roles,
                                     autoStart: true,
@@ -234,7 +233,8 @@ const Hero = () => {
                         </Span>
                     </TextLoop>
                     <SubTitle>{Bio.description}</SubTitle>
-                    <ResumeButton href={Bio.resume} target="display">Check Resume</ResumeButton>
+                    <ResumeButton href={Bio.resume} target="_blank">Check Resume</ResumeButton>
+                    
                 </HeroLeftContainer>
                 <HeroRightContainer>
                     <Image src={HeroImg} alt="Hero" />
