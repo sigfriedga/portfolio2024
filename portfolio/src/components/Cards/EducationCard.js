@@ -11,8 +11,15 @@ const Document = styled.img`
 
 const Card = styled.div`
   width: 650px;
+  background-color: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 10;
+  color: whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 12px 16px;
   justify-content: space-between;
   position: relative;
@@ -35,7 +42,7 @@ const Card = styled.div`
         width: 300px;
     }
 
-    border: 1px solid #306ee8;
+    border: 1px solid #73fda8;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 4px;
 `;
 
@@ -66,7 +73,7 @@ const Body = styled.div`
 const Name = styled.div`
     font-size: 18px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_primary + 90};
+    color: ${({ theme }) => theme.text_primary};
 
     @media only screen and (max-width: 768px) {
         font-size: 14px;
@@ -76,7 +83,7 @@ const Name = styled.div`
 const Degree = styled.div`
     font-size: 14px;
     font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_primary};
 
     @media only screen and (max-width: 768px) {
         font-size: 12px;
@@ -86,7 +93,7 @@ const Degree = styled.div`
 const Date = styled.div`
     font-size: 12px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
+    color: ${({ theme }) => theme.text_primary + 99};
 
     @media only screen and (max-width: 768px) {
         font-size: 10px;
@@ -97,7 +104,7 @@ const Description = styled.div`
     width: 100%;
     font-size: 15px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_primary};
     margin-bottom: 10px;
 
     @media screen and (max-width: 768px) {
@@ -107,7 +114,7 @@ const Description = styled.div`
 
 const Span = styled.span`
     overflow: hidden;
-    disply: -webkit-box;
+    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     max-width: 100%;
@@ -126,7 +133,11 @@ const EducationCard = ({ education }) => {
             </Body>
         </Top>
         <Description>
-            <Span>{education.desc}</Span>
+            <Span>
+                {education.desc}
+                <br/>
+                {education.desc2}
+            </Span>
         </Description>
     </Card>
     );

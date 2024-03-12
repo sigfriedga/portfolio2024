@@ -86,9 +86,9 @@ const Education = () => {
                                 <EducationCard education={education} />
                             </TimelineContent>
                             <TimelineSeparator>
-                                <TimelineDot variant="outlined" color="secondary" />
+                                <TimelineDot variant="outlined" color="warning" />
                                 { index !== education.length -1 && (
-                                <TimelineConnector style={{ background: "#854ce6"}} />
+                                <TimelineConnector style={{ background: "white"}} />
                                 )}
                             </TimelineSeparator>
                         </TimelineItem>

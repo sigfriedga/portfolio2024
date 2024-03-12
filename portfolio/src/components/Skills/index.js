@@ -58,8 +58,15 @@ const SkillsContainer = styled.div`
 const Skill = styled.div`
     width: 100%;
     max-width: 500px;
-    background-color: ${({ theme }) => theme.card};
-    border: 0.1px solid #854ce6;
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+            box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+    z-index: 10;
+    color: whitesmoke;
+    border-radius: 1rem;
+    border: 0.1px solid #73fda8;
     border-radius: 16px;
     padding: 18px 36px;
 
@@ -77,7 +84,7 @@ const Skill = styled.div`
 const SkillTitle = styled.div`
     font-size: 28px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_secondary};
+    color: ${({ theme }) => theme.text_primary};
     margin-bottom: 20px;
     text-align: center;
 `;
@@ -96,7 +103,7 @@ const SkillItem = styled.div`
     gap: 8px;
     justify-content: center;
     font-size: 16px;
-    color: ${({ theme }) => theme.text_primary + 80};
+    color: ${({ theme }) => theme.text_primary};
     border-radius: 12px;
     border: 1px solid ${({ theme }) => theme.text_primary + 80};
     padding: 12px 16px;
@@ -125,7 +132,7 @@ const Skills = () => {
         <Container id="skills">
             <Wrapper>
                 <Title>Skills</Title>
-                <Description>Here are some of my skills on which I have been working on for the past 2 years.</Description>
+                <Description>Below are the skills I've developed over the past 2 years.</Description>
                 <SkillsContainer>
                     {skills.map((skill) => (
                     <Skill>

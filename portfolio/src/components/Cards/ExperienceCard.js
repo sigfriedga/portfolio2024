@@ -11,8 +11,15 @@ const Document = styled.img`
 
 const Card = styled.div`
   width: 650px;
+  background-color: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 10;
+  color: whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 12px 16px;
   justify-content: space-between;
   position: relative;
@@ -35,7 +42,7 @@ const Card = styled.div`
         width: 300px;
     }
 
-    border: 1px solid #306ee8;
+    border: 1px solid #73fda8;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 4px;
 `;
 
@@ -66,7 +73,7 @@ const Body = styled.div`
 const Role = styled.div`
     font-size: 18px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_primary + 90};
+    color: ${({ theme }) => theme.text_primary};
 
     @media only screen and (max-width: 768px) {
         font-size: 14px;
@@ -76,7 +83,7 @@ const Role = styled.div`
 const Company = styled.div`
     font-size: 14px;
     font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_primary};
 
     @media only screen and (max-width: 768px) {
         font-size: 12px;
@@ -86,7 +93,7 @@ const Company = styled.div`
 const Duration = styled.div`
     font-size: 12px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
+    color: ${({ theme }) => theme.text_primary + 99};
 
     @media only screen and (max-width: 768px) {
         font-size: 10px;
@@ -97,8 +104,9 @@ const Description = styled.div`
     width: 100%;
     font-size: 15px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_primary};
     margin-bottom: 10px;
+    line-height: 22px;
 
     @media screen and (max-width: 768px) {
         font-size: 12px;
@@ -109,19 +117,20 @@ const Skills = styled.div`
     width: 100%;
     display: flex;
     gap: 12px;
-    margin-top: 10;
+    margin-top: 25px;
 `;
 
 const ItemWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 5px;
 `;
 
 const Skill = styled.div`
     font-size: 15px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_primary + 99};
+    margin-top: 20px;
 
     @media screen and (max-width: 768px) {
         font-size: 12px;
@@ -139,7 +148,12 @@ const ExperienceCard = ({ experience }) => {
                 <Duration>{experience.date}</Duration>
             </Body>
         </Top>
-        <Description>{experience.desc}
+        <Description>
+        {experience.desc}
+        <br/>
+        {experience.desc2}
+        <br/>
+        {experience.desc3}
         {experience?.skills && 
         <>
         <br/>
